@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+    <channel>
+        <language>en-US</language>
+        <title>Changelog</title>
+        <description>Changelog</description>
+        <pubDate>Sat, 28 Sep 2024 11:38:00 +0000</pubDate>
+        <lastBuildDate>Sat, 28 Sep 2024 11:38:00 +0000</lastBuildDate>
+        <generator>Deadlock</generator>
+        <link>https://forums.playdeadlock.com/forums/changelog.10/</link>
+        <atom:link rel="self" type="application/rss+xml" href="https://forums.playdeadlock.com/forums/changelog.10/index.rss"/>
+        <item>
+            <title>09-27-2024 Update</title>
+            <pubDate>Sat, 28 Sep 2024 00:33:18 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/09-27-2024-update.33816/</link>
+            <guid isPermaLink="false">33816</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">- Mirage: Tornado lift duration reduced from 1.5s to 1.2s<br />
+- Mirage: Tornado T1 bonus lift duration reduced from +0.5s to +0.4s<br />
+- Mirage: Tornado base bullet evasion reduced from 30% to 25%<br />
+- Mirage: Djinn&#039;s Mark T3 now also reduces Multiplier Cooldown by 0.5s</div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>09-26-2024 Update</title>
+            <pubDate>Thu, 26 Sep 2024 21:17:58 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/09-26-2024-update.33015/</link>
+            <guid isPermaLink="false">33015</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">[ General Changes ]<br />
+<br />
+- Added new hero, Mirage.<br />
+<br />
+<a href="https://forums.playdeadlock.com/attachments/hero_mirage-png.20355/"
+		target="_blank"><img src="https://project8-data.community.forum/attachments/20/20368-e3ba7aa1f4a51da04dc021866fa54506.jpg?hash=ymVdtOoaPa"
+		class="bbImage "
+		style=""
+		alt="hero_mirage.png"
+		title="hero_mirage.png"
+		width="240" height="328" loading="lazy" /></a><br />
+<br />
+<br />
+- Added an initial Anti-Cheat detection system. When a user is detected as cheating, during the game session the opponents will be given a choice between banning the user immediately and ending the match or turning the cheater into a frog for the rest of the game and then banning them afterwards. The system is set to conservative detection levels as we work on a v2 anti-cheat system that is more extensive. We will turn on the...<br />
+<br />
+<a href="https://forums.playdeadlock.com/threads/09-26-2024-update.33015/" class="link link--internal">Read more</a></div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>09-19-2024 Update</title>
+            <pubDate>Fri, 20 Sep 2024 00:58:06 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/09-19-2024-update.31166/</link>
+            <guid isPermaLink="false">31166</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">- Replaced the recent soul duplication hotfix with new behavior. Pre 10 min, lanes now always split orbs when there are more heroes than the assigned participants for that lane (3+ people in a dual lane, 2+ people in a solo). Previously it only split with 3+ people regardless of the lane, which is what allowed soul abuses when dipping into a solo lane.<br />
+- Private lobbies can now assign players to duo and solo lanes<br />
+- Fixed some recent bugs with Vindicta Flight that could cause some large...<br />
+<br />
+<a href="https://forums.playdeadlock.com/threads/09-19-2024-update.31166/" class="link link--internal">Read more</a></div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>09-17-2024 Update</title>
+            <pubDate>Tue, 17 Sep 2024 23:08:12 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/09-17-2024-update.30413/</link>
+            <guid isPermaLink="false">30413</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">- Fixed players being able to exploit soul sharing across multiple lanes to earn more souls than intended. The way the fix is implemented is that each player can only be considered for an enemy trooper death event 4 times per wave number during the laning phase.<br />
+- Fixed troopers sometimes not dying after doing their death flash state<br />
+- Fixed Unstoppable state not preventing fire rate reductions<br />
+- Fixed Grey Talon&#039;s Charge Shot and Vindicta&#039;s Assassinate cameras not working properly</div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>09-14-2024 Update</title>
+            <pubDate>Sun, 15 Sep 2024 04:05:26 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/09-14-2024-update.29586/</link>
+            <guid isPermaLink="false">29586</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">- Bebop: Hyper Beam cooldown increased from 117 to 130<br />
+- Bebop: Hyper Beam T1 reduced from -38s to -30s<br />
+- Bebop: Hyper Beam end radius reduced from 5m to 4m<br />
+- Bebop: Hyper Beam slow reduced from 40% to 30%<br />
+- Bebop: Hyper Beam DPS reduced from 220 to 205<br />
+- Bebop: Hyper Beam DPS spirit scaling reduced from 3 to 2.7<br />
+- McGinnis: Medicinal Specter radius spirit power reduced from 0.07 to 0.05<br />
+- Ammo Scavenger: Buff duration reduced from 40s to 35s</div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>09-12-2024 Update</title>
+            <pubDate>Thu, 12 Sep 2024 21:51:49 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/09-12-2024-update.27974/</link>
+            <guid isPermaLink="false">27974</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">[ General Changes ]<br />
+<br />
+- Matchmaking is now open 24/7 for all regions<br />
+<br />
+- Added new minimap<br />
+<div style="margin-left: 20px">Updated base asset and added new unique Hero Icons&#8203;</div><div style="margin-left: 20px">Neutral Camps are now represented by a highlight glow on the buildings they are located within&#8203;</div><div style="margin-left: 20px">The Orange Lane (Orchard) is now the Green Lane (Greenwich)&#8203;</div><br />
+- Added a new behavior system. Players can temporarily lose access to certain capabilities in the game. The controls include Matchmaking, Voice Chat, Text Chat, Pausing...<br />
+<br />
+<a href="https://forums.playdeadlock.com/threads/09-12-2024-update.27974/" class="link link--internal">Read more</a></div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>09-01-2024 Update</title>
+            <pubDate>Sun, 01 Sep 2024 20:40:48 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/09-01-2024-update.24093/</link>
+            <guid isPermaLink="false">24093</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">- Infernus: Flame Dash now has 30% Slow Resistance<br />
+- Ivy: Air Drop self cast time reduced from 2 to 1.3<br />
+- Seven: Storm Cloud: Spirit Power DPS scaling reduced from 0.8 to 0.7<br />
+- Viscous: Puddle Punch base cast range from 60m to 40m<br />
+- Viscous: Puddle Punch T2 damage from +50 to +35<br />
+- Viscous: Puddle Punch base cooldown increased from 24 to 28<br />
+- Viscous: Puddle Punch now knocks people less high into the air<br />
+- Viscous: Base clip reduced from 24 to 20, Alt Fire now requires 5 bullets<br />
+- Rope climb...<br />
+<br />
+<a href="https://forums.playdeadlock.com/threads/09-01-2024-update.24093/" class="link link--internal">Read more</a></div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>08-29-2024 Update</title>
+            <pubDate>Thu, 29 Aug 2024 21:28:47 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/08-29-2024-update.22253/</link>
+            <guid isPermaLink="false">22253</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">[ General Changes ]<br />
+<br />
+- Added a new Profile page that displays a breakdown of recent matches and all-time player and hero statistics (Note: the newly added stats &#039;Souls Collected&#039; and &#039;Healing&#039; are starting at 0 for all players)<br />
+<br />
+- Added Report button to ESC menu player list to allow reporting of teammates in-game<br />
+- Improved visibility of report button on post-game screen<br />
+<br />
+- You can now drag-and-drop items between categories in Builds<br />
+- Added search to the Public Builds list, you can search...<br />
+<br />
+<a href="https://forums.playdeadlock.com/threads/08-29-2024-update.22253/" class="link link--internal">Read more</a></div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>08-23-2024 Update</title>
+            <pubDate>Fri, 23 Aug 2024 21:58:32 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/08-23-2024-update.19948/</link>
+            <guid isPermaLink="false">19948</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">We are lifting the rules for public conversation about Deadlock to allow for things like streaming, community websites and discussions.<br />
+<br />
+Nothing else is changing with our state of development. We are remaining invite-only and continue to be in an early development stage with lots of temporary art and experimental gameplay.</div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>08-22-2024 Update</title>
+            <pubDate>Fri, 23 Aug 2024 01:55:55 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/08-22-2024-update.19716/</link>
+            <guid isPermaLink="false">19716</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">- Fixed High-Velocity Mag affecting some abilities<br />
+- Silence Glyph: Damage reduced from 150 to 100 <br />
+- Silence Glyph: Spirit damage scaling reduced from 1.5 to 1.0<br />
+- Silence Glyph: Cast range reduced from 40m to 25m<br />
+- Silence Glyph: Sprint reduced from 2 to 1<br />
+- Silence Glyph: Spirit Shield reduced from +225 to +200<br />
+- Reactive Barrier: Cooldown increased from 20s to 30s<br />
+- Return Fire: Bullet damage returned reduced form 80% to 70%<br />
+- Dying with Siphon Bullets stacks will now cause you to lose 2...<br />
+<br />
+<a href="https://forums.playdeadlock.com/threads/08-22-2024-update.19716/" class="link link--internal">Read more</a></div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>08-18-2024 Update</title>
+            <pubDate>Mon, 19 Aug 2024 05:46:34 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/08-18-2024-update.18377/</link>
+            <guid isPermaLink="false">18377</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">- Restorative Locket: Spirit Resist reduced from 10% to 8%<br />
+- Restorative Locket: Cooldown increased from 24s to 28s<br />
+- Restorative Locket: Heal reduced from 40 per stack to 35<br />
+- Restorative Locket: Stamina restore changed from max stamina to 1 charge</div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>08-16-2024 Update</title>
+            <pubDate>Fri, 16 Aug 2024 22:28:51 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/08-16-2024-update.17251/</link>
+            <guid isPermaLink="false">17251</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">- Fixed spectating ending 1 minute before the game ended<br />
+- Fixed Hero Demo starting you at max level<br />
+- Fixed Lady Geist not being able to jump during Life Drain<br />
+- Fixed the boon level display in the hero pages not working correctly<br />
+- Changed default shop music back to original<br />
+<br />
+- Shiv: Gun base damage reduced from 6.3 to 5.7<br />
+- Shiv: Serrated Knives collision size reduced by 10%<br />
+- Shiv: Serrated Knives projectile speed reduced by 10%<br />
+- Shiv: Serrated Knives base damage reduced from 75 to 35<br />
+-...<br />
+<br />
+<a href="https://forums.playdeadlock.com/threads/08-16-2024-update.17251/" class="link link--internal">Read more</a></div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>08-15-2024 Update</title>
+            <pubDate>Thu, 15 Aug 2024 21:18:32 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/08-15-2024-update.16378/</link>
+            <guid isPermaLink="false">16378</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">[ General Changes ]<br />
+<br />
+- Added a new hero, Shiv<br />
+<br />
+- Games can now be watched by an unlimited number of spectators<br />
+- Spectator games now have 1 minute delay<br />
+<br />
+- Added localization for Simplified Chinese, Russian, Brazilian Portuguese, Spanish (Spain), Spanish (Latin America), Turkish, Ukrainian, Czech, and French. These are currently a work-in-progress.<br />
+- Language can be selected from the settings menu<br />
+<br />
+- Matchmaking windows are now open 1 hour earlier in all regions<br />
+<br />
+- You can now prioritize...<br />
+<br />
+<a href="https://forums.playdeadlock.com/threads/08-15-2024-update.16378/" class="link link--internal">Read more</a></div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>08-06-2024 Update</title>
+            <pubDate>Tue, 06 Aug 2024 23:19:49 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/08-06-2024-update.14283/</link>
+            <guid isPermaLink="false">14283</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">- Various adjustments to orb spawning behavior (a bit less horizontal motion and some more variance and details to its motion)<br />
+- Server performance improvements<br />
+- New categories added to builds are now wider by default<br />
+- Added a console command: deadlock_get_old_builds, which will download and print out all of the build data for your account prior to the new builds feature<br />
+<br />
+- Viscous: Added a directional arrow particle effect to Goo Ball for Viscous<br />
+- Viscous: Added additional particles...<br />
+<br />
+<a href="https://forums.playdeadlock.com/threads/08-06-2024-update.14283/" class="link link--internal">Read more</a></div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>08-01-2024 Update</title>
+            <pubDate>Thu, 01 Aug 2024 21:47:26 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/08-01-2024-update.13369/</link>
+            <guid isPermaLink="false">13369</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper"><b>[ General Changes ]</b><br />
+<br />
+- Added a new hero, Viscous. He&#039;s green.<br />
+<a href="https://forums.playdeadlock.com/attachments/1722549138302-png.8597/"
+		target="_blank"><img src="https://project8-data.community.forum/attachments/8/8606-5e65b8fab4e5d8bfec0c89803747f777.jpg?hash=iAqrn-aLP0"
+		class="bbImage "
+		style=""
+		alt="1722549138302.png"
+		title="1722549138302.png"
+		width="240" height="326" loading="lazy" /></a><br />
+<br />
+- Improved client performance<br />
+<br />
+- Reworked the Hero Builds system. Browsing and editing builds now happens within the Shop UI (accessible via Sandbox or during a normal game). You can create custom categories for items with unique names and descriptions that can be independently resized and positioned. The interface for browsing builds has also been improved, public builds will now be sorted by popularity (number...<br />
+<br />
+<a href="https://forums.playdeadlock.com/threads/08-01-2024-update.13369/" class="link link--internal">Read more</a></div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>07-23-2024 Update</title>
+            <pubDate>Tue, 23 Jul 2024 21:53:43 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/07-23-2024-update.12505/</link>
+            <guid isPermaLink="false">12505</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">- Fixed a recent issue with Bebop gun not using lag compensation correctly when hitting orbs<br />
+- Mid Boss starting health increased from 5000 to 6000<br />
+- Mid Boss health gained per minute increased from 275 to 350<br />
+- Mid Boss warning sound now plays at 50% HP<br />
+- Fixed bot behavior with the new Urn locations<br />
+- Fixed some bugs with Hero Demo options not working due to a recent update<br />
+- Fixed a rare case where you could abandon a match accidentally when accepting a friend invite<br />
+- Fixed some cases...<br />
+<br />
+<a href="https://forums.playdeadlock.com/threads/07-23-2024-update.12505/" class="link link--internal">Read more</a></div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>07-18-2024 Update</title>
+            <pubDate>Thu, 18 Jul 2024 21:44:15 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/07-18-2024-update.11831/</link>
+            <guid isPermaLink="false">11831</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">[ General Changes ]<br />
+<br />
+- Accounts that are banned for cheating will now have all their invited accounts banned as well<br />
+<br />
+- The Damage Report&#039;s Damage List now aggregates damage from all units, and displays both hero and ability icons<br />
+- You can view per-hero damage in the Damage Report by hovering the damage type breakdown above each hero portrait<br />
+- Added a &#039;Compact&#039; Damage Report mode that shows less information but takes up less space.  This is the default after dying.<br />
+- Clicking the top bar...<br />
+<br />
+<a href="https://forums.playdeadlock.com/threads/07-18-2024-update.11831/" class="link link--internal">Read more</a></div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>07-11-2024 Update</title>
+            <pubDate>Thu, 11 Jul 2024 20:46:25 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/07-11-2024-update.10871/</link>
+            <guid isPermaLink="false">10871</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">[ General Changes ]<br />
+<br />
+- Testing schedule now starts 1 hour earlier for all regions<br />
+- EU matchmaking region is now split up into two regions based on language<br />
+<br />
+- Shop search now highlights the relevant sections of the item tooltip that match the search string you&#039;ve put in<br />
+- Fixed the Shop search not finding all the types of bonuses an item has<br />
+- Various adjustments to the Damage Report feature<br />
+- Damage Report now shows up by default when dead or spectating<br />
+- Added HUD Notifications on Soul...<br />
+<br />
+<a href="https://forums.playdeadlock.com/threads/07-11-2024-update.10871/" class="link link--internal">Read more</a></div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>07-04-2024 Update</title>
+            <pubDate>Thu, 04 Jul 2024 21:16:32 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/07-04-2024-update.9652/</link>
+            <guid isPermaLink="false">9652</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">[ General Changes ]<br />
+<br />
+- Added Asia servers and matchmaking region. Testing times for this region are Mon-Thur 5PM to 3AM and Fri-Sun 3PM to 3AM in China Standard Time (GMT+8).<br />
+<br />
+- Added South America servers and matchmaking region. Testing times for this region are Mon-Thur 5PM to 3AM and Fri-Sun 3PM to 3AM in Atlantic Standard Time (GMT-4).<br />
+<br />
+- Added a new Damage Report feature. You can now open a flyout panel within the shop to view a breakdown of your hero&#039;s incoming and outgoing damage...<br />
+<br />
+<a href="https://forums.playdeadlock.com/threads/07-04-2024-update.9652/" class="link link--internal">Read more</a></div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+        <item>
+            <title>06-27-2024 Update</title>
+            <pubDate>Thu, 27 Jun 2024 20:58:44 +0000</pubDate>
+            <link>https://forums.playdeadlock.com/threads/06-27-2024-update.8486/</link>
+            <guid isPermaLink="false">8486</guid>
+            <author>invalid@example.com (Yoshi)</author>
+            <category domain="https://forums.playdeadlock.com/forums/changelog.10/"><![CDATA[Changelog]]></category>
+            <dc:creator>Yoshi</dc:creator>
+            <content:encoded><![CDATA[<div class="bbWrapper">[ General Changes ]<br />
+<br />
+- Added a hero based mmr system, so when you join a match with a specific hero the matchmaker adjusts the skill level it assumes you are at by a percentage up or down based on your experience and performance levels with that hero.<br />
+<br />
+- Added settings option to allow weapon zoom to be a toggle<br />
+- Added a game volume slider which will control volume independently from voice chat (VoIP)<br />
+- General improvements to voice chat quality<br />
+- Non-matchmaking lobbies are now considered...<br />
+<br />
+<a href="https://forums.playdeadlock.com/threads/06-27-2024-update.8486/" class="link link--internal">Read more</a></div>]]></content:encoded>
+            <slash:comments>0</slash:comments>
+        </item>
+    </channel>
+</rss>

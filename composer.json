@@ -11,6 +11,7 @@
         "ext-libxml": "*",
         "ext-mbstring": "*",
         "ext-redis": "*",
+        "debril/feed-io": "^6.0",
         "doctrine/collections": "^2.2",
         "doctrine/doctrine-bundle": "^2.12",
         "doctrine/doctrine-migrations-bundle": "^3.3",
@@ -38,6 +39,7 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.54",
+        "phpspec/prophecy-phpunit": "^2.2",
         "phpunit/phpunit": "^9.5",
         "psalm/plugin-symfony": "^5.1",
         "symfony/browser-kit": "7.0.*",
