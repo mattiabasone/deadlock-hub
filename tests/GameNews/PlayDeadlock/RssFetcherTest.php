@@ -68,7 +68,7 @@ class RssFetcherTest extends KernelTestCase
 
         $this->client->getResponse(
             Argument::exact("https://forums.playdeadlock.com/forums/changelog.10/index.rss"),
-            Argument::type(\DateTimeImmutable::class)
+            Argument::type(\DateTime::class)
         )->willReturn($response->reveal())
             ->shouldBeCalled();
     }

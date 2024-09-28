@@ -20,7 +20,6 @@ return (new PhpCsFixer\Config())
         'blank_line_after_opening_tag' => true,
         'blank_line_before_statement' => true,
         'constant_case' => true,
-        'date_time_immutable' => true,
         'declare_strict_types' => true,
         'fopen_flags' => [
             'b_mode' => true,
