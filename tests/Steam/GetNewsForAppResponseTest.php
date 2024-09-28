@@ -20,14 +20,15 @@ class GetNewsForAppResponseTest extends KernelTestCase
         );
 
         self::assertInstanceOf(GetNewsForAppResponse::class, $getNewsForAppResponse);
-        self::assertCount(4, $getNewsForAppResponse->appNews->newsItems);
+        self::assertCount(10, $getNewsForAppResponse->appNews->newsItems);
 
         $firstNews = $getNewsForAppResponse->appNews->newsItems->first();
-        self::assertEquals("PATCH 01.000.203", $firstNews->title);
+        self::assertEquals("Risk of Rain 2 co-creator now working on Valve multiplayer game Deadlock", $firstNews->title);
         self::assertEquals(
-            "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312198731215",
+            "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/6339469370186650798",
             $firstNews->url
         );
-        self::assertEquals(1713258041, $firstNews->date);
+        self::assertEquals(1727465088, $firstNews->date);
+        self::assertEquals(new \DateTimeImmutable("2024-09-27T19:24:48.000000+0000"), $firstNews->getDateTime());
     }
 }
