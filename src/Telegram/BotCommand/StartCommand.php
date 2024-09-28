@@ -18,9 +18,10 @@ class StartCommand extends Command
             'text' => <<<TEXT
                 Hello!
                 
-                This bot collects some news from the Deadlock API/newsfeed.
+                This bot collects news from some Deadlock newsfeeds.
                 
                 Available commands:
+
                 /subscribe - subscribe the chat for game updates
                 /unsubscribe - remove the subscription
                 TEXT,
