@@ -1,0 +1,53 @@
+FROM dunglas/frankenphp:php8.3.12-bookworm as init
+
+ARG USER=app
+ARG USER_UID=1000
+
+RUN \
+	adduser --disabled-login ${USER} -u ${USER_UID} --shell /bin/bash \
+    && mkdir /app \
+    && chown -R ${USER}:${USER} /app; \
+	# Add additional capability to bind to port 80 and 443
+	setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/frankenphp; \
+	# Give write access to /data/caddy and /config/caddy
+	chown -R ${USER}:${USER} /data/caddy && chown -R ${USER}:${USER} /config/caddy;
+
+RUN install-php-extensions \
+	dom \
+	pdo_mysql \
+	gd \
+    curl \
+    iconv \
+	intl \
+    mbstring \
+    pcntl \
+	zip \
+	opcache \
+    && pecl install redis-6.0.2 \
+    && docker-php-ext-enable redis \
+    && pecl install igbinary-3.2.15 \
+    && docker-php-ext-enable igbinary
+
+EXPOSE 80
+EXPOSE 443
+
+FROM init as web
+
+COPY --chown=${USER}:${USER} ./artifact/ /app/
+
+USER ${USER}
+
+FROM init as web-dev
+
+ARG USER=app
+
+USER root
+
+RUN apt-get update \
+    && apt-get install unzip \
+    && apt-get clean \
+    && curl -s -o /usr/bin/composer https://getcomposer.org/download/2.7.2/composer.phar \
+    && chmod +x /usr/bin/composer \
+    && pecl install xdebug-3.3.2 \
+
+USER ${USER}

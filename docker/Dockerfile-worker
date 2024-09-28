@@ -1,0 +1,43 @@
+FROM php:8.3.12-cli-bookworm as init
+
+ARG USER=app
+ARG USER_UID=1000
+
+ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+
+RUN adduser --disabled-login ${USER} -u ${USER_UID} --shell /bin/bash \
+    && mkdir /app \
+    && chown -R ${USER}:${USER} /app
+
+RUN apt-get update \
+    && apt-get install -y supervisor \
+    && apt-get clean \
+    && install-php-extensions \
+        dom \
+        pdo_mysql \
+        gd \
+        curl \
+        iconv \
+        intl \
+        mbstring \
+        pcntl \
+        zip \
+        opcache \
+    && pecl install redis-6.0.2 \
+    && docker-php-ext-enable redis \
+    && pecl install igbinary-3.2.15 \
+    && docker-php-ext-enable igbinary
+
+COPY worker/worker.conf /etc/supervisor/conf.d/
+
+FROM init as worker
+
+COPY --chown=${USER}:${USER} ./artifact/ /app/
+
+WORKDIR /app
+
+CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
+
+FROM init as worker-dev
+
+CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]

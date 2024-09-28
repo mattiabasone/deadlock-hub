@@ -1,0 +1,39 @@
+services:
+  web:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile-web
+      target: web-dev
+    environment:
+      - SERVER_NAME=:80
+    ports:
+      - "8111:80"
+    volumes:
+      - './:/app'
+    depends_on:
+      - redis
+      - mysql
+
+  worker:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile-worker
+      target: worker-dev
+    volumes:
+      - './:/app'
+    depends_on:
+      - redis
+      - mysql
+
+  redis:
+    image: redis:6
+    ports:
+      - "6379"
+
+  mysql:
+    image: mysql:8.0.31
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=deadlockhub
+    ports:
+      - "23306:3306"
