@@ -17,7 +17,6 @@ services:
         resource: '../src/'
         exclude:
             - '../src/DependencyInjection/'
-            - '../src/ArrowHead/Models'
             - '../src/Entity/'
             - '../src/Kernel.php'
 
@@ -28,16 +27,8 @@ services:
         arguments:
             $token: '%env(string:TELEGRAM_BOT_TOKEN)%'
 
-    DeadlockHub\ArrowHead\DataServiceInterface: '@DeadlockHub\ArrowHead\DataService'
-
-
 when@test:
     services:
         _defaults:
             autowire: true
             autoconfigure: true
-
-        DeadlockHub\Tests\Support\:
-            resource: '../tests/Support/'
-
-        DeadlockHub\ArrowHead\DataServiceInterface: '@DeadlockHub\Tests\Support\ArrowHead\DataServiceStub'
