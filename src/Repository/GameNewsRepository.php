@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace DeadlockHub\Repository;
 
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Persistence\ManagerRegistry;
 use DeadlockHub\Entity\Enum\GameNewsType;
 use DeadlockHub\Entity\GameNews;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @extends ServiceEntityRepository<GameNews>

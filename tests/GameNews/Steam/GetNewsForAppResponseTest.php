@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DeadlockHub\Tests\Steam;
+namespace DeadlockHub\Tests\GameNews\Steam;
 
-use DeadlockHub\Steam\GetNewsForAppResponse;
+use DeadlockHub\GameNews\Steam\GetNewsForAppResponse;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Serializer\SerializerInterface;
 

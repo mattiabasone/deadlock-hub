@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DeadlockHub\Steam\GetNewsForAppResponse;
+namespace DeadlockHub\GameNews\Steam\GetNewsForAppResponse;
 
 use Symfony\Component\Serializer\Attribute\SerializedName;
 

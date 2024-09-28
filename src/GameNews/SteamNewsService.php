@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace DeadlockHub\GameNews;
 
-use Doctrine\ORM\EntityManagerInterface;
 use DeadlockHub\Entity\Enum\GameNewsType;
 use DeadlockHub\Entity\GameNews;
+use DeadlockHub\GameNews\Steam\GetNewsForAppResponse\NewsItem;
+use DeadlockHub\GameNews\Steam\SteamNewsApi;
 use DeadlockHub\Message\Telegram\GameNewsAdded;
 use DeadlockHub\Repository\GameNewsRepository;
-use DeadlockHub\Steam\GetNewsForAppResponse\NewsItem;
-use DeadlockHub\Steam\SteamNewsApi;
+use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Clock\ClockInterface;
 use Symfony\Component\Messenger\MessageBusInterface;

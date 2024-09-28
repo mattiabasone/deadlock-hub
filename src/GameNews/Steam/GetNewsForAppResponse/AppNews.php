@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace DeadlockHub\Steam\GetNewsForAppResponse;
+namespace DeadlockHub\GameNews\Steam\GetNewsForAppResponse;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use DeadlockHub\Infrastructure\Serializer\ArrayCollectionNormalizer;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Serializer\Attribute\Context;
 use Symfony\Component\Serializer\Attribute\SerializedName;
 

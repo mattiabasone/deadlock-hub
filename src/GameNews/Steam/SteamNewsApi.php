@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DeadlockHub\Steam;
+namespace DeadlockHub\GameNews\Steam;
 
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;

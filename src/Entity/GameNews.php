@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace DeadlockHub\Entity;
 
-use Doctrine\DBAL\Types\Types;
-use Doctrine\ORM\Mapping as ORM;
 use DeadlockHub\Entity\Enum\GameNewsType;
 use DeadlockHub\Repository\GameNewsRepository;
+use Doctrine\DBAL\Types\Types;
+use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Table('game_news')]
 #[ORM\Entity(repositoryClass: GameNewsRepository::class)]

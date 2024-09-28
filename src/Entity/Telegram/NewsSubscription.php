@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace DeadlockHub\Entity\Telegram;
 
-use Doctrine\DBAL\Types\Types;
-use Doctrine\ORM\Mapping as ORM;
 use DeadlockHub\Entity\Timestampable;
 use DeadlockHub\Repository\Telegram\NewsSubscriptionRepository;
+use Doctrine\DBAL\Types\Types;
+use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Table('telegram_news_subscriptions')]
 #[ORM\Entity(repositoryClass: NewsSubscriptionRepository::class)]

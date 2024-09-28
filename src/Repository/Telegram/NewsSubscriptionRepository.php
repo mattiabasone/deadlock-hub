@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace DeadlockHub\Repository\Telegram;
 
+use DeadlockHub\Entity\Telegram\NewsSubscription;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use DeadlockHub\Entity\Telegram\NewsSubscription;
 
 /**
  * @extends ServiceEntityRepository<NewsSubscription>

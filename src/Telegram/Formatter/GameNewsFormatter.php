@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace DeadlockHub\Telegram\Formatter;
 
-use DeadlockHub\ArrowHead\Models\Race;
 use DeadlockHub\Entity\Enum\GameNewsType;
 
 readonly class GameNewsFormatter
