@@ -12,6 +12,9 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Telegram\Bot\Api;
 
+/**
+ * @psalm-suppress UnusedClass
+ */
 #[AsCommand(
     name: 'deadlock-hub:telegram:set-webhook',
     description: 'Set telegram webhook',

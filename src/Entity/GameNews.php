@@ -79,7 +79,7 @@ class GameNews
         int $newOwner,
         \DateTimeInterface $dateTimeChange
     ): string {
-        return sprintf(
+        return \sprintf(
             '%d-%d-%d-%s',
             $planetIndex,
             $previousOwner,

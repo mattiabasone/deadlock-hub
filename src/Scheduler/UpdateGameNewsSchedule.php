@@ -25,6 +25,7 @@ final class UpdateGameNewsSchedule implements ScheduleProviderInterface
         return (new Schedule())
             ->add(
                 RecurringMessage::every('180 seconds', new UpdateGameNews(GameNewsType::SteamNews)),
+                RecurringMessage::every('180 seconds', new UpdateGameNews(GameNewsType::PlayDeadlockChangelogNews)),
             )
             ->stateful($this->cache)
         ;

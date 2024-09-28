@@ -27,8 +27,11 @@ services:
         arguments:
             $token: '%env(string:TELEGRAM_BOT_TOKEN)%'
 
+    FeedIo\FeedIo:
+    FeedIo\Adapter\ClientInterface:
+        factory: ['DeadlockHub\Infrastructure\FeedIo\ClientFactory', 'create']
+
 when@test:
     services:
         _defaults:
-            autowire: true
-            autoconfigure: true
+            public: true

@@ -5,22 +5,19 @@ declare(strict_types=1);
 namespace DeadlockHub\GameNews;
 
 use DeadlockHub\Entity\Enum\GameNewsType;
-use DeadlockHub\Entity\GameNews;
 use DeadlockHub\GameNews\Steam\GetNewsForAppResponse\NewsItem;
 use DeadlockHub\GameNews\Steam\SteamNewsApi;
 use DeadlockHub\Message\Telegram\GameNewsAdded;
 use DeadlockHub\Repository\GameNewsRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Clock\ClockInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 
-readonly class SteamNewsService
+readonly class SteamNewsService implements NewsServiceInterface
 {
     public function __construct(
         private SteamNewsApi $steamNewsApi,
         private ClockInterface $clock,
-        private EntityManagerInterface $entityManager,
         private GameNewsRepository $gameNewsRepository,
         private LoggerInterface $logger,
         private MessageBusInterface $messageBus,
@@ -42,13 +39,7 @@ readonly class SteamNewsService
                 {$newsItem->url}
                 MESSAGE;
 
-            $this->entityManager->persist(
-                (new GameNews())
-                    ->setIdentifier($identifier)
-                    ->setType(GameNewsType::SteamNews)
-                    ->setMessage($message)
-            );
-            $this->entityManager->flush();
+            $this->gameNewsRepository->store($identifier, GameNewsType::SteamNews, $message);
 
             $this->messageBus->dispatch(new GameNewsAdded($identifier, GameNewsType::SteamNews));
         }
