@@ -29,16 +29,16 @@ class PlayDeadlockChangelogService implements NewsServiceInterface
         $changelogEntries = $this->rssFetcher->fetchChangelogFeed();
 
         $streamableNews = $changelogEntries
-            ->filter(fn (ChangelogFeedEntry $newsItem): bool => $this->shouldStreamNews($newsItem));
+            ->filter(fn (ChangelogFeedEntry $feedEntry): bool => $this->shouldStreamNews($feedEntry));
 
-        foreach ($streamableNews as $newsItem) {
-            $identifier = $newsItem->id;
+        foreach ($streamableNews as $feedEntry) {
+            $identifier = $feedEntry->id;
             $message = <<<MESSAGE
-                📰 <b>{$newsItem->title}</b>
+                📰 <b>{$feedEntry->title}</b>
                 
-                {$newsItem->content}
+                {$feedEntry->content}
                 
-                {$newsItem->link}
+                {$feedEntry->link}
                 MESSAGE;
 
             $this->gameNewsRepository->store($identifier, GameNewsType::PlayDeadlockChangelogNews, $message);
@@ -55,14 +55,14 @@ class PlayDeadlockChangelogService implements NewsServiceInterface
         ];
 
         if (!\is_null($this->gameNewsRepository->findByTypeAndIdentifier(GameNewsType::PlayDeadlockChangelogNews, $feedEntry->id))) {
-            $this->logger->debug("Steam news found, skipping", $logContext);
+            $this->logger->debug("Feed entry found, skipping", $logContext);
 
             return false;
         }
 
         $newsAge = $this->clock->now()->diff($feedEntry->publishedAt);
         if ($newsAge->d !== 0 || $newsAge->h > 2) {
-            $this->logger->debug("Steam news too old", $logContext);
+            $this->logger->debug("Feed entry too old", $logContext);
 
             return false;
         }
