@@ -32,13 +32,13 @@ class PlayDeadlockChangelogService implements NewsServiceInterface
             ->filter(fn (ChangelogFeedEntry $newsItem): bool => $this->shouldStreamNews($newsItem));
 
         foreach ($streamableNews as $newsItem) {
-            $identifier = $newsItem->gid;
+            $identifier = $newsItem->id;
             $message = <<<MESSAGE
                 📰 <b>{$newsItem->title}</b>
                 
-                {$newsItem->description}
+                {$newsItem->content}
                 
-                {$newsItem->url}
+                {$newsItem->link}
                 MESSAGE;
 
             $this->gameNewsRepository->store($identifier, GameNewsType::PlayDeadlockChangelogNews, $message);
