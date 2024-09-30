@@ -19,6 +19,9 @@ class ArrayCollectionNormalizer implements DenormalizerInterface, NormalizerInte
     ) {
     }
 
+    /**
+     * @return array<class-string, null|bool>
+     */
     #[\Override]
     public function getSupportedTypes(?string $format): array
     {

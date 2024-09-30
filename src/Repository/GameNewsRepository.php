@@ -37,12 +37,7 @@ class GameNewsRepository extends ServiceEntityRepository
 
     public function store(string $identifier, GameNewsType $type, string $message): void
     {
-        $this->getEntityManager()->persist(
-            (new GameNews())
-                ->setIdentifier($identifier)
-                ->setType($type)
-                ->setMessage($message)
-        );
+        $this->getEntityManager()->persist(new GameNews($identifier, $type, $message));
         $this->getEntityManager()->flush();
     }
 }

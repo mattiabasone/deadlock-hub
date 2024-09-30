@@ -29,6 +29,11 @@ readonly class NewsItem
 
     public function getDateTime(): \DateTimeImmutable
     {
-        return \DateTimeImmutable::createFromFormat('U', (string) $this->date);
+        $dateTime = \DateTimeImmutable::createFromFormat('U', (string) $this->date);
+        if ($dateTime === false) {
+            throw new \RuntimeException('Failed to create DateTimeImmutable from timestamp');
+        }
+
+        return $dateTime;
     }
 }

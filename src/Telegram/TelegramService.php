@@ -14,14 +14,14 @@ readonly class TelegramService
 {
     public function __construct(
         private Api $telegramApi,
-        private StartCommand $startCommand,
-        private SubscribeCommand $subscribeCommand,
-        private UnsubscribeCommand $unsubscribeCommand,
+        StartCommand $startCommand,
+        SubscribeCommand $subscribeCommand,
+        UnsubscribeCommand $unsubscribeCommand,
     ) {
         $this->telegramApi->addCommands([
-            $this->startCommand,
-            $this->subscribeCommand,
-            $this->unsubscribeCommand,
+            $startCommand,
+            $subscribeCommand,
+            $unsubscribeCommand,
         ]);
     }
 

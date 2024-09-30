@@ -48,7 +48,8 @@
         "symfony/debug-bundle": "7.0.*",
         "symfony/maker-bundle": "^1.58",
         "symfony/phpunit-bridge": "^7.0",
-        "vimeo/psalm": "^5.23"
+        "vimeo/psalm": "^5.23",
+        "weirdan/doctrine-psalm-plugin": "^2.9"
     },
     "config": {
         "allow-plugins": {
@@ -90,7 +91,8 @@
             "@auto-scripts"
         ],
         "format": "@php vendor/bin/php-cs-fixer fix",
-        "test": "@php vendor/bin/phpunit"
+        "test": "@php vendor/bin/phpunit",
+        "psalm": "@php vendor/bin/psalm --threads=1 --long-progress --no-cache"
     },
     "conflict": {
         "symfony/symfony": "*"

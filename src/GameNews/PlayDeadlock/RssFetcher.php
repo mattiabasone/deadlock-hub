@@ -41,13 +41,17 @@ class RssFetcher
 
     private static function feedEntryToChangelogEntry(): \Closure
     {
-        return static function (Item $item) {
+        return static function (Item $item): ChangelogFeedEntry {
+            $title = $item->getTitle() ?? throw new \RuntimeException('Title is missing');
+            $link = $item->getLink() ?? throw new \RuntimeException('Link is missing');
+            $lastModified = $item->getLastModified() ?? throw new \RuntimeException('Last modified date is missing');
+
             return new ChangelogFeedEntry(
                 id: $item->getPublicId() ?? Uuid::uuid4()->toString(),
-                title: $item->getTitle(),
-                content: $item->getValue('content:encoded'),
-                link: $item->getLink(),
-                publishedAt: \DateTimeImmutable::createFromMutable($item->getLastModified())
+                title: $title,
+                content: $item->getValue('content:encoded') ?? '',
+                link: $link,
+                publishedAt: \DateTimeImmutable::createFromMutable($lastModified)
             );
         };
     }

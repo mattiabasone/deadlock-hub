@@ -6,7 +6,7 @@
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
     findUnusedBaselineEntry="true"
-    findUnusedCode="true"
+    findUnusedCode="false"
 >
     <projectFiles>
         <directory name="src"/>
@@ -14,7 +14,16 @@
             <directory name="vendor"/>
         </ignoreFiles>
     </projectFiles>
+
+    <forbiddenFunctions>
+        <function name="dd"/>
+        <function name="dump"/>
+        <function name="var_dump"/>
+        <function name="print_r"/>
+    </forbiddenFunctions>
+
     <plugins>
         <pluginClass class="Psalm\SymfonyPsalmPlugin\Plugin"/>
+        <pluginClass class="Weirdan\DoctrinePsalmPlugin\Plugin"/>
     </plugins>
 </psalm>

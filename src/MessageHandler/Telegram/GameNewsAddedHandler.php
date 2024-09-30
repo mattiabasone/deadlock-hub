@@ -21,9 +21,14 @@ final readonly class GameNewsAddedHandler
     ) {
     }
 
-    public function __invoke(GameNewsAdded $message)
+    public function __invoke(GameNewsAdded $message): void
     {
         $gameNews = $this->gameNewsRepository->findByTypeAndIdentifier($message->type, $message->identifier);
+
+        if (\is_null($gameNews)) {
+            return;
+        }
+
         foreach ($this->newsSubscriptionRepository->findAll() as $subscriber) {
             $this->messageBus->dispatch(
                 new NotifySubscriber(

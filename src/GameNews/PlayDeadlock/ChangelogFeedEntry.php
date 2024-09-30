@@ -11,7 +11,7 @@ readonly class ChangelogFeedEntry
         public string $title,
         public string $content,
         public string $link,
-        public ?\DateTimeImmutable $publishedAt,
+        public \DateTimeImmutable $publishedAt,
     ) {
     }
 }
