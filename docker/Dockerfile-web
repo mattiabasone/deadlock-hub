@@ -48,6 +48,6 @@ RUN apt-get update \
     && apt-get clean \
     && curl -s -o /usr/bin/composer https://getcomposer.org/download/2.7.2/composer.phar \
     && chmod +x /usr/bin/composer \
-    && pecl install xdebug-3.3.2 \
+    && pecl install xdebug-3.3.2
 
 USER ${USER}
