@@ -18,9 +18,8 @@ readonly class SteamNewsService implements NewsServiceInterface
 
     public function processNews(): void
     {
-        $news = $this->steamNewsApi->fetch();
-
-        $streamableNews = $news->appNews
+        $streamableNews = $this->steamNewsApi->fetch()
+            ->appNews
             ->newsItems
             ->filter(fn (NewsItem $newsItem): bool => $this->newsServiceHandler->shouldStreamNews(
                 GameNewsType::SteamNews,
@@ -29,12 +28,13 @@ readonly class SteamNewsService implements NewsServiceInterface
             ));
 
         foreach ($streamableNews as $newsItem) {
-
             $identifier = $newsItem->gid;
+            $url = str_replace(" ", "", $newsItem->url);
+
             $message = <<<MESSAGE
                 📰 <b>{$newsItem->title}</b>
                 
-                {$newsItem->url}
+                {$url}
                 MESSAGE;
 
             $this->newsServiceHandler->recordNews(GameNewsType::SteamNews, $identifier, $message);
