@@ -74,7 +74,7 @@ class SteamNewsServiceTest extends KernelTestCase
             $newsHandler
         );
 
-        $this->shoudlStoreAndPublishNews("6339469370186650798");
+        $this->shouldStoreAndPublishNews("6339469370186650798");
 
         $steamNewsService->processNews();
     }
@@ -89,7 +89,7 @@ class SteamNewsServiceTest extends KernelTestCase
             $newsHandler
         );
 
-        $this->shoudlStoreAndPublishNews("6339469370186650798", "6339469370186244811", "6339469370186087577");
+        $this->shouldStoreAndPublishNews("6339469370186650798", "6339469370186244811", "6339469370186087577");
 
         $steamNewsService->processNews();
     }
@@ -115,7 +115,7 @@ class SteamNewsServiceTest extends KernelTestCase
         )->method('dispatch');
     }
 
-    private function shoudlStoreAndPublishNews(string ...$identifiers): void
+    private function shouldStoreAndPublishNews(string ...$identifiers): void
     {
         $this->gameNewsRepository->expects($this->exactly(\count($identifiers)))
             ->method('store')
