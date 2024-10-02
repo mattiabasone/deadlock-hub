@@ -29,6 +29,7 @@ readonly class SteamNewsService implements NewsServiceInterface
 
         foreach ($streamableNews as $newsItem) {
             $identifier = $newsItem->gid;
+            /** @var string $url */
             $url = str_replace(" ", "", $newsItem->url);
 
             $message = <<<MESSAGE

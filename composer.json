@@ -91,6 +91,7 @@
             "@auto-scripts"
         ],
         "format": "@php vendor/bin/php-cs-fixer fix",
+        "format-check": "@php vendor/bin/php-cs-fixer fix --dry-run",
         "test": "@php vendor/bin/phpunit",
         "psalm": "@php vendor/bin/psalm --threads=1 --long-progress --no-cache"
     },

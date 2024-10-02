@@ -6,16 +6,17 @@ namespace DeadlockHub\Infrastructure\Serializer;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
-class ArrayCollectionNormalizer implements DenormalizerInterface, NormalizerInterface
+class ArrayCollectionNormalizer implements NormalizerInterface, DenormalizerInterface
 {
     public const string INNER_TYPE = 'inner_type';
 
     public function __construct(
         #[Autowire(service: 'serializer.normalizer.object')]
-        private readonly NormalizerInterface $normalizer,
+        private readonly AbstractNormalizer $normalizer,
     ) {
     }
 

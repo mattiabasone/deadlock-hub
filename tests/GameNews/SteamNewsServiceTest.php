@@ -52,7 +52,7 @@ class SteamNewsServiceTest extends KernelTestCase
     #[Test]
     public function shouldNotProcessOldNews(): void
     {
-        $newsHandler = $this->createNewsHandlerInstance(new \DateTimeImmutable());
+        $newsHandler = $this->createNewsHandlerInstance(new \DateTimeImmutable('2077-09-27T19:20:00+00:00'));
 
         $steamNewsService = new SteamNewsService(
             $this->steamNewsApi,
@@ -117,19 +117,21 @@ class SteamNewsServiceTest extends KernelTestCase
 
     private function shouldStoreAndPublishNews(string ...$identifiers): void
     {
-        $this->gameNewsRepository->expects($this->exactly(\count($identifiers)))
+        $callsCount = \count($identifiers);
+
+        $this->gameNewsRepository->expects($this->exactly($callsCount))
             ->method('store')
             ->willReturnCallback(
                 function (string $identifier, GameNewsType $type, string $content) use ($identifiers) {
                     self::assertEquals(GameNewsType::SteamNews, $type);
 
                     if (!\in_array($identifier, $identifiers, true)) {
-                        self::fail("Unexpected news item");
+                        self::fail("GameNewsRepository - Unexpected news item {$identifier}");
                     }
                 }
             );
 
-        $this->messageBus->expects($this->exactly(\count($identifiers)))
+        $this->messageBus->expects($this->exactly($callsCount))
             ->method('dispatch')
             ->willReturnCallback(
                 function (GameNewsAdded $message) use ($identifiers) {
@@ -137,7 +139,7 @@ class SteamNewsServiceTest extends KernelTestCase
                     self::assertEquals(GameNewsType::SteamNews, $message->type);
 
                     if (!\in_array($message->identifier, $identifiers, true)) {
-                        self::fail("Unexpected news item");
+                        self::fail("MessageBus - Unexpected news item identifier {$message->identifier}");
                     }
 
                     return new Envelope($message);

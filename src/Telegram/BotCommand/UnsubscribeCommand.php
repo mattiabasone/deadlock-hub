@@ -8,6 +8,9 @@ use DeadlockHub\Repository\Telegram\NewsSubscriptionRepository;
 use Telegram\Bot\Actions;
 use Telegram\Bot\Commands\Command;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class UnsubscribeCommand extends Command
 {
     protected string $name = 'unsubscribe';
@@ -23,7 +26,7 @@ class UnsubscribeCommand extends Command
         $this->replyWithChatAction(['action' => Actions::TYPING]);
 
         $newsSubscriber = $this->newsSubscriptionRepository->findOneBy(
-            ['subscriberId' => (string) $this->getUpdate()->message->chat->id]
+            ['subscriberId' => (string) $this->getUpdate()->message?->chat->id]
         );
 
         if (\is_null($newsSubscriber)) {

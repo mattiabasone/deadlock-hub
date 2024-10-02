@@ -8,6 +8,9 @@ use DeadlockHub\Repository\Telegram\NewsSubscriptionRepository;
 use Telegram\Bot\Actions;
 use Telegram\Bot\Commands\Command;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class SubscribeCommand extends Command
 {
     protected string $name = 'subscribe';
@@ -20,10 +23,15 @@ class SubscribeCommand extends Command
 
     public function handle(): void
     {
+        $chatId = (string) $this->getUpdate()->message?->chat->id;
+        if ($chatId === "") {
+            return;
+        }
+
         $this->replyWithChatAction(['action' => Actions::TYPING]);
 
         $newsSubscriber = $this->newsSubscriptionRepository->findOneBy(
-            ['subscriberId' => (string) $this->getUpdate()->message->chat->id]
+            ['subscriberId' => $chatId]
         );
 
         if (!\is_null($newsSubscriber)) {
@@ -34,7 +42,7 @@ class SubscribeCommand extends Command
             return;
         }
 
-        $this->newsSubscriptionRepository->create((string) $this->getUpdate()->message->chat->id);
+        $this->newsSubscriptionRepository->create($chatId);
 
         $this->replyWithMessage([
             'text' => 'This chat has been registered for game updates!',
