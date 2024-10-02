@@ -23,6 +23,7 @@ class GetNewsForAppResponseTest extends KernelTestCase
         self::assertCount(10, $getNewsForAppResponse->appNews->newsItems);
 
         $firstNews = $getNewsForAppResponse->appNews->newsItems->first();
+        self::assertInstanceOf(GetNewsForAppResponse\NewsItem::class, $firstNews);
         self::assertEquals("Risk of Rain 2 co-creator now working on Valve multiplayer game Deadlock", $firstNews->title);
         self::assertEquals(
             "https://steamstore-a.akamaihd.net/news/externalpost/PCGamesN/6339469370186650798",

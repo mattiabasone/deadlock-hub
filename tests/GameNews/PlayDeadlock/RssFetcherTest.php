@@ -8,32 +8,30 @@ use DeadlockHub\GameNews\PlayDeadlock\RssFetcher;
 use FeedIo\Adapter\ClientInterface;
 use FeedIo\Adapter\ResponseInterface;
 use FeedIo\FeedIo;
-use Prophecy\Argument;
-use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Log\NullLogger;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class RssFetcherTest extends KernelTestCase
 {
-    use ProphecyTrait;
-
     private ?RssFetcher $service;
-    private ?ObjectProphecy $client;
+    private ?MockObject $client;
 
     public function setUp(): void
     {
         parent::setUp();
 
-        $this->client = $this->prophesize(ClientInterface::class);
+        $this->client = $this->createMock(ClientInterface::class);
 
         $this->service = new RssFetcher(
-            new FeedIo($this->client->reveal()),
+            new FeedIo($this->client),
             new NullLogger()
         );
     }
 
-    public function testRssFetcherWithASuccessfulResponse(): void
+    #[Test]
+    public function rssFetcherWithASuccessfulResponse(): void
     {
         $this->givenASuccessfulClientResponseForTheChangelogFeed();
         $result = $this->service->fetchChangelogFeed();
@@ -58,18 +56,19 @@ class RssFetcherTest extends KernelTestCase
 
     private function givenASuccessfulClientResponseForTheChangelogFeed(): void
     {
-        $response = $this->prophesize(ResponseInterface::class);
-        $response->getBody()->willReturn(
+        $response = $this->createMock(ResponseInterface::class);
+        $response->method('getBody')->willReturn(
             file_get_contents(__DIR__."/raw_data/feed.rss")
         );
 
-        $response->isModified()
+        $response->method('isModified')
             ->willReturn(true);
 
-        $this->client->getResponse(
-            Argument::exact("https://forums.playdeadlock.com/forums/changelog.10/index.rss"),
-            Argument::type(\DateTime::class)
-        )->willReturn($response->reveal())
-            ->shouldBeCalled();
+        $this->client->method('getResponse')
+            ->willReturn($response)
+        ->with(
+            $this->equalTo("https://forums.playdeadlock.com/forums/changelog.10/index.rss"),
+            $this->isInstanceOf(\DateTime::class)
+        );
     }
 }
