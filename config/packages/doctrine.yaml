@@ -23,7 +23,7 @@ doctrine:
                 prefix: 'DeadlockHub\Entity'
                 alias: DeadlockHub
         controller_resolver:
-            auto_mapping: true
+            auto_mapping: false
 
 when@test:
     doctrine:
